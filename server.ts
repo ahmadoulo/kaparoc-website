@@ -2,17 +2,53 @@ import "dotenv/config";
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-  httpOptions: {
-    headers: {
-      "User-Agent": "aistudio-build",
-    },
-  },
-});
+// ─── OpenRouter config ────────────────────────────────────────────────────────
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
+// Fallback list in case the API call fails
+const FALLBACK_MODELS = [
+  "deepseek/deepseek-r1:free",
+  "deepseek/deepseek-chat:free",
+  "nousresearch/hermes-3-llama-3.1-405b:free",
+  "microsoft/phi-3-mini-128k-instruct:free",
+];
+
+let FREE_MODELS: string[] = FALLBACK_MODELS;
+
+// Dynamically fetch available free models from OpenRouter at startup
+async function loadFreeModels() {
+  if (!OPENROUTER_API_KEY) return;
+  try {
+    const res = await fetch("https://openrouter.ai/api/v1/models", {
+      headers: { "Authorization": `Bearer ${OPENROUTER_API_KEY}` },
+    });
+    const data = await res.json() as any;
+    const available = (data?.data ?? [])
+      .filter((m: any) =>
+        m.id?.endsWith(":free") &&
+        (m.pricing?.prompt === "0" || m.pricing?.prompt === 0 || Number(m.pricing?.prompt) === 0)
+      )
+      .map((m: any) => m.id as string);
+
+    if (available.length > 0) {
+      FREE_MODELS = available;
+      console.log(`✅ Loaded ${available.length} free OpenRouter models:`, available.slice(0, 5));
+    } else {
+      console.warn("⚠️  No free models found via API, using fallback list.");
+    }
+  } catch (err) {
+    console.warn("⚠️  Could not fetch OpenRouter models, using fallback list:", err);
+  }
+}
+
+if (!OPENROUTER_API_KEY) {
+  console.warn("⚠️  OPENROUTER_API_KEY is not set. Chat will not work.");
+}
+
+
+// ─── System prompt ────────────────────────────────────────────────────────────
 const KAPAROC_CONTEXT = `
 Vous êtes l'assistant virtuel IA de "KAPAROC INGÉNIERIE", un bureau d'études géotechniques de premier plan basé à Dakar, au Sénégal, et intervenant dans toute l'Afrique de l'Ouest.
 Votre rôle EXCLUSIF est de répondre aux questions concernant Kaparoc, ses services, ses missions (G1 à G5), ses partenaires, ses domaines d'intervention, sa directrice générale, et l'ingénierie géotechnique.
@@ -41,62 +77,94 @@ INFORMATIONS SUR KAPAROC :
 - Pourquoi Kaparoc : Excellence technique, Réactivité, Innovation, Équipe pluridisciplinaire, Qualité certifiée.
 `;
 
+// ─── Server ───────────────────────────────────────────────────────────────────
 async function startServer() {
   const app = express();
   const PORT = 3001;
 
   app.use(express.json());
 
-  // API Route for Gemini Chat
+  // API Route for OpenRouter Chat
   app.post("/api/chat", async (req, res) => {
     try {
       const { message, history } = req.body;
-      
+
       if (!message) {
         return res.status(400).json({ error: "Message is required" });
       }
 
-      const chat = ai.chats.create({
-        model: "gemini-2.0-flash",
-        config: {
-          systemInstruction: KAPAROC_CONTEXT,
-          temperature: 0.2,
-        },
-      });
+      if (!OPENROUTER_API_KEY) {
+        return res.status(500).json({ error: "Clé API OpenRouter non configurée. Veuillez contacter l'administrateur." });
+      }
 
-      // Pass history to simulate continuous conversation if needed
-      // Actually with @google/genai, ai.chats doesn't take history in create() the way standard models did,
-      // Wait, let's look at the gemini-api skill for how to use chat with history.
-      // Since it's a simple stateless interaction or we can just send the chat context. 
-      // If we use ai.chats.create we might just send the previous messages as part of contents if supported, 
-      // but without standard history, it's safer to just do a generateContent.
-      // Let's use generateContent for now passing the formatted history.
+      // Build messages array (OpenAI format)
+      const messages: { role: string; content: string }[] = [
+        { role: "system", content: KAPAROC_CONTEXT.trim() },
+      ];
 
-      let contents = [];
+      // Add conversation history
       if (history && Array.isArray(history)) {
         for (const turn of history) {
-          contents.push({ role: turn.role, parts: [{ text: turn.text }] });
+          messages.push({
+            role: turn.role === "model" ? "assistant" : "user",
+            content: turn.text,
+          });
         }
       }
-      contents.push({ role: "user", parts: [{ text: message }] });
 
-      const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
-        contents,
-        config: {
-          systemInstruction: KAPAROC_CONTEXT,
-          temperature: 0.2,
-        },
-      });
+      // Add current user message
+      messages.push({ role: "user", content: message });
 
-      res.json({ reply: response.text });
-    } catch (error: any) {
-      console.error("Gemini API Error:", error);
-      if (error?.status === 429) {
-        res.status(429).json({ error: "Le service est temporairement surchargé. Veuillez patienter 30 secondes avant de réessayer." });
-      } else {
-        res.status(500).json({ error: "Désolé, je rencontre des difficultés techniques pour le moment." });
+      // Call OpenRouter API with fallback across free models
+      let reply: string | null = null;
+
+      for (const model of FREE_MODELS) {
+        const response = await fetch(OPENROUTER_URL, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+            "Content-Type": "application/json",
+            "HTTP-Referer": process.env.APP_URL || "http://localhost:3001",
+            "X-Title": "Kaparoc Ingénierie Assistant",
+          },
+          body: JSON.stringify({
+            model,
+            messages,
+            temperature: 0.2,
+            max_tokens: 1024,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          console.error(`OpenRouter [${model}] Error:`, response.status, errorData);
+
+          if (response.status === 429) {
+            return res.status(429).json({
+              error: "Le service est temporairement surchargé. Veuillez patienter quelques secondes avant de réessayer.",
+            });
+          }
+          // Try next model on 404 or other errors
+          continue;
+        }
+
+        const data = await response.json() as any;
+        reply = data?.choices?.[0]?.message?.content ?? null;
+
+        if (reply) {
+          console.log(`✓ Response from model: ${model}`);
+          break;
+        }
       }
+
+      if (!reply) {
+        throw new Error("Empty response from OpenRouter");
+      }
+
+      res.json({ reply });
+    } catch (error: any) {
+      console.error("Chat Error:", error);
+      res.status(500).json({ error: "Désolé, je rencontre des difficultés techniques pour le moment." });
     }
   });
 
@@ -117,7 +185,11 @@ async function startServer() {
 
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Using OpenRouter free models: ${FREE_MODELS.join(", ")}`);
   });
 }
 
 startServer();
+
+// Load free models from OpenRouter API after server is ready
+loadFreeModels();
