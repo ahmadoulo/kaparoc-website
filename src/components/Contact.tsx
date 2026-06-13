@@ -100,7 +100,7 @@ export default function Contact() {
                     Siège de Dakar
                   </span>
                   <p className="text-sm font-light text-brand-beige/90 leading-relaxed">
-                    Dakar, Sénégal
+                    Liberté VI Ext, 17 Rue L 50 x 25, Dakar, Sénégal
                   </p>
                   <a 
                     href="https://share.google/5FhsqswwBym7KRh6t" 
@@ -141,9 +141,6 @@ export default function Contact() {
                   </span>
                   <p className="text-sm font-semibold text-white">
                     contact@kaparoc.com
-                  </p>
-                  <p className="text-xs font-light text-brand-beige/70">
-                    Étude de prix : devis@kaparoc.com
                   </p>
                 </div>
               </div>
