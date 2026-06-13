@@ -103,7 +103,7 @@ export default function Contact() {
                     Liberté VI Ext, 17 Rue L 50 x 25, Dakar, Sénégal
                   </p>
                   <a 
-                    href="https://share.google/5FhsqswwBym7KRh6t" 
+                    href="https://maps.app.goo.gl/agYb9oFo7ruHVgRGA" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="inline-flex items-center gap-1.5 text-[11px] bg-brand-orange hover:bg-white text-white hover:text-brand-charcoal px-2.5 py-1 rounded font-bold transition-all mt-1"
@@ -162,6 +162,27 @@ export default function Contact() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Google Maps Embed */}
+            <div className="mt-6 rounded-2xl overflow-hidden border border-white/10 shadow-xl relative group">
+              <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 rounded-2xl" />
+              <iframe
+                src="https://www.google.com/maps?q=Liberté+VI+Ext,+17+Rue+L+50+x+25,+Dakar,+Sénégal&output=embed&hl=fr&z=16"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localisation Kaparoc Ingénierie — Liberté VI Ext, Dakar"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-charcoal/80 to-transparent py-2 px-3 flex items-center justify-between pointer-events-none">
+                <span className="text-[10px] text-white/70 font-medium">
+                  📍 Liberté VI Ext, 17 Rue L 50 x 25 — Dakar
+                </span>
+              </div>
             </div>
           </div>
 
