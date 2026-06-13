@@ -1,0 +1,6 @@
+{
+  "name": "Kaparoc Ingénierie",
+  "description": "Site web corporate haut de gamme et moderne pour KAPAROC INGENIERIE, bureau d'études géotechniques en Afrique de l'Ouest.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
