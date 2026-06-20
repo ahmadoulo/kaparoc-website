@@ -89,10 +89,25 @@
   }
   </script>
 
-  <!-- ═══ Google Fonts (non render-blocking) ═══ -->
+  <!-- ═══ Google Fonts (véritablement non render-blocking) ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@700&display=swap" />
+  <!-- Preload hint pour découverte anticipée -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@700&display=swap" />
+  <!-- media=print → chargement asynchrone, onload bascule en all → rendu non bloqué -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@700&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <!-- Fallback sans JavaScript -->
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@700&display=swap" />
+  </noscript>
+
+  <!-- ═══ Préchargement ressources critiques ═══ -->
+  <link rel="preload" as="image" href="/kaparoc-logo.png" />
 
   <!-- ═══ Favicons (favicon.io) ═══ -->
   <meta name="theme-color" content="#C5703A" />
