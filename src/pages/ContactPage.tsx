@@ -10,8 +10,19 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contactez-nous | Kaparoc Ingénierie</title>
-        <meta name="description" content="Contactez KAPAROC INGENIERIE à Dakar, Sénégal. Téléphone : +221 33 853 01 79. Demandez votre étude de sol ou un devis géotechnique." />
+        <title>Contact | KAPAROC Ingénierie – Devis Géotechnique Dakar, Sénégal</title>
+        <meta name="description" content="Contactez KAPAROC Ingénierie à Dakar : +221 33 853 01 79. Demandez votre étude géotechnique, devis de sol ou reconnaissance de terrain. Notre équipe répond sous 24h." />
+        <meta name="keywords" content="contact géotechnique Dakar, devis étude sol Sénégal, bureau d'études contact, KAPAROC Ingénierie téléphone, reconnaissance terrain Dakar" />
+        <link rel="canonical" href="https://www.kaparoc.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.kaparoc.com/contact" />
+        <meta property="og:title" content="Contactez KAPAROC Ingénierie – Devis Géotechnique Dakar" />
+        <meta property="og:description" content="Obtenez votre devis géotechnique sous 24h. KAPAROC Ingénierie à Dakar : +221 33 853 01 79. Experts en études de sol G1-G5 au Sénégal." />
+        <meta property="og:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact KAPAROC Ingénierie – Géotechnique Dakar" />
+        <meta name="twitter:description" content="Contactez notre bureau géotechnique à Dakar. Devis étude de sol, sondages et fondations. +221 33 853 01 79." />
+        <meta name="twitter:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
       </Helmet>
       
       <div className="pt-32 pb-8 bg-white text-center">

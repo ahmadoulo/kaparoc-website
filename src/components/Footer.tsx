@@ -32,28 +32,12 @@ export default function Footer() {
           
           {/* Column 1: Brand presentation (4 columns) */}
           <div className="lg:col-span-5 space-y-5">
-            <Link to="/" className="flex items-center gap-2 group hover:opacity-95 transition-opacity">
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-title font-bold text-2xl tracking-[0.1em] text-white uppercase leading-none">
-                    KAPAR
-                  </span>
-                  {/* Sphere Symbol Representation for dark background */}
-                  <div className="relative w-6 h-6 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-brand-beige rounded-full overflow-hidden">
-                      <div className="absolute top-1 left-0 w-full h-[3px] bg-brand-orange transform -rotate-12"></div>
-                      <div className="absolute top-2.5 left-0 w-full h-[4px] bg-brand-brown transform -rotate-6"></div>
-                      <div className="absolute bottom-1 left-0 w-full h-[3px] bg-brand-orange transform rotate-12"></div>
-                    </div>
-                  </div>
-                  <span className="font-title font-bold text-2xl tracking-[0.1em] text-white uppercase leading-none">
-                    C
-                  </span>
-                </div>
-                <span className="text-[10px] font-semibold text-brand-orange tracking-[0.3em] uppercase mt-1">
-                  Ingénierie
-                </span>
-              </div>
+            <Link to="/" className="flex items-center group hover:opacity-90 transition-opacity">
+              <img
+                src="/kaparoc-logo.png"
+                alt="KAPAROC Ingénierie"
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-xs text-brand-beige/70 leading-relaxed font-light max-w-sm">
               Bureau d&apos;études géotechniques de référence spécialisé dans l&apos;analyse des sols, le dimensionnement des fondations et les infrastructures durables en Afrique de l&apos;Ouest. Basé à Dakar, Sénégal.

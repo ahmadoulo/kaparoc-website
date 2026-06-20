@@ -56,28 +56,16 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group hover:opacity-95 transition-opacity">
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className={`font-title font-bold text-2xl tracking-[0.1em] uppercase leading-none transition-colors ${isTransparentOnDark ? "text-white" : "text-brand-brown"}`}>
-                    KAPAR
-                  </span>
-                  {/* Sphere Symbol Representation */}
-                  <div className="relative w-6 h-6 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-brand-beige rounded-full overflow-hidden">
-                      <div className="absolute top-1 left-0 w-full h-[3px] bg-brand-orange transform -rotate-12"></div>
-                      <div className="absolute top-2.5 left-0 w-full h-[4px] bg-brand-brown transform -rotate-6"></div>
-                      <div className="absolute bottom-1 left-0 w-full h-[3px] bg-brand-orange transform rotate-12"></div>
-                    </div>
-                  </div>
-                  <span className={`font-title font-bold text-2xl tracking-[0.1em] uppercase leading-none transition-colors ${isTransparentOnDark ? "text-white" : "text-brand-brown"}`}>
-                    C
-                  </span>
-                </div>
-                <span className="text-[10px] font-semibold text-brand-orange tracking-[0.3em] uppercase mt-1">
-                  Ingénierie
-                </span>
-              </div>
+            <Link to="/" className="flex items-center group hover:opacity-90 transition-opacity">
+              <img
+                src="/kaparoc-logo.png"
+                alt="KAPAROC Ingénierie"
+                className={`h-12 w-auto object-contain transition-all duration-300 ${
+                  isTransparentOnDark
+                    ? "brightness-0 invert"
+                    : "brightness-100"
+                }`}
+              />
             </Link>
 
             {/* Desktop Navigation Links */}

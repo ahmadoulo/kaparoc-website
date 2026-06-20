@@ -55,8 +55,19 @@ export default function MissionsPage() {
   return (
     <>
       <Helmet>
-        <title>Missions Géotechniques G1 à G5 | Kaparoc Ingénierie</title>
-        <meta name="description" content="Comprendre les missions géotechniques (norme NF P 94-500). G1, G2, G3, G4 et G5 n'auront plus de secret pour vous. Obtenez une étude réglementaire." />
+        <title>Missions Géotechniques G1 à G5 (NF P 94-500) | KAPAROC Ingénierie Dakar</title>
+        <meta name="description" content="Comprendre les missions géotechniques G1, G2, G3, G4 et G5 (norme NF P 94-500). Guide complet par KAPAROC Ingénierie à Dakar : étude préliminaire, conception, exécution, supervision et diagnostic des sols." />
+        <meta name="keywords" content="mission géotechnique G1 G2 G3 G4 G5, norme NF P 94-500, étude géotechnique préliminaire, conception fondations, diagnostic sol, assurance décennale Sénégal, KAPAROC" />
+        <link rel="canonical" href="https://www.kaparoc.com/geotechnique-g1-g5" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.kaparoc.com/geotechnique-g1-g5" />
+        <meta property="og:title" content="Guide G1 à G5 – Missions Géotechniques | KAPAROC Ingénierie" />
+        <meta property="og:description" content="Guide complet des missions géotechniques G1 à G5 selon NF P 94-500. KAPAROC Ingénierie explique chaque étape : faisabilité, conception, exécution, supervision, diagnostic." />
+        <meta property="og:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Missions G1 à G5 – KAPAROC Ingénierie Géotechnique" />
+        <meta name="twitter:description" content="Guide NF P 94-500 : G1 préliminaire, G2 conception, G3 exécution, G4 supervision, G5 diagnostic. Expert géotechnique Dakar." />
+        <meta name="twitter:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
       </Helmet>
       
       {/* Page Header */}

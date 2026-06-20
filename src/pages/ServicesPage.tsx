@@ -31,8 +31,19 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Services Géotechniques | Kaparoc Ingénierie</title>
-        <meta name="description" content="Découvrez l'ensemble de nos services : études de sol, investigations terrain, analyses en laboratoire, et topographie." />
+        <title>Services Géotechniques | KAPAROC Ingénierie – Études de Sol à Dakar</title>
+        <meta name="description" content="Services géotechniques complets à Dakar : études de sol G1-G5, sondages pressiométriques, forages carottés, analyses de laboratoire, topographie. KAPAROC Ingénierie, expert en BTP au Sénégal." />
+        <meta name="keywords" content="services géotechniques Dakar, étude de sol BTP, sondage pressiométrique Sénégal, forage carotté, analyse laboratoire sol, topographie géotechnique Afrique" />
+        <link rel="canonical" href="https://www.kaparoc.com/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.kaparoc.com/services" />
+        <meta property="og:title" content="Services Géotechniques – KAPAROC Ingénierie | Dakar, Sénégal" />
+        <meta property="og:description" content="Études de sol, sondages, forages, analyses labo et topographie. KAPAROC Ingénierie couvre tous vos besoins géotechniques G1 à G5 au Sénégal." />
+        <meta property="og:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Services Géotechniques – KAPAROC Ingénierie Dakar" />
+        <meta name="twitter:description" content="Études de sol, sondages pressiométriques, forages, labo géotechnique — KAPAROC Ingénierie, Dakar Sénégal." />
+        <meta name="twitter:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
       </Helmet>
       
       {/* Page Header */}

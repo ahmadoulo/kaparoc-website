@@ -7,18 +7,18 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 const partners = [
-  { name: "CHEC", sub: "China Harbour Engineering", file: "chec.png" },
-  { name: "Zhengtai Group", sub: "Construction", file: "zhengtai.png" },
-  { name: "Dima Groupe", sub: "Immobilier", file: "dima.png" },
-  { name: "Eydon", sub: "Distribution", file: "eydon.png" },
-  { name: "B.D.T.P", sub: "Travaux Publics", file: "bdtp.png" },
-  { name: "ProTec", sub: "Professional Techniques", file: "protec.png" },
-  { name: "PROMOGED", sub: "Gestion des déchets", file: "promoged.png" },
-  { name: "JL Structures", sub: "Ingénierie", file: "jl-structures.png" },
+  { name: "CHEC", sub: "China Harbour Engineering", file: "ChinaHarborEngineeringLTD_Logo.jpeg" },
+  { name: "Zhengtai Group", sub: "Construction", file: "zhengtai-group.jpg" },
+  { name: "Dima Groupe", sub: "Immobilier", file: "dima-groupe.png" },
+  { name: "Eydon", sub: "Distribution", file: "eydon_logo.jpg" },
+  { name: "B.D.T.P", sub: "Travaux Publics", file: "bdtp-logo.jpeg" },
+  { name: "ProTec", sub: "Professional Techniques", file: "protec-logo.png" },
+  { name: "PROMOGED", sub: "Gestion des déchets", file: "promoged-logo.png" },
+  { name: "SL Structures", sub: "Ingénierie", file: "sl-structure-logo.jpg" },
   { name: "Xewell", sub: "Logistique & BTP", file: "xewell.png" },
-  { name: "NMA", sub: "Nouvelle Minoterie Africaine", file: "nma.png" },
-  { name: "Zikhar", sub: "International", file: "zikhar.png" },
-  { name: "La Brioche Dorée", sub: "Agroalimentaire", file: "brioche-doree.png" },
+  { name: "NMA", sub: "Nouvelle Minoterie Africaine", file: "nma-logo.jpeg" },
+  { name: "Azkhar", sub: "International", file: "azkhar-logo.png" },
+  { name: "La Brioche Dorée", sub: "Agroalimentaire", file: "brioche-doree-logo.png" },
 ];
 
 export default function Partners() {

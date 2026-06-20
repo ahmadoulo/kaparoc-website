@@ -10,8 +10,19 @@ export default function SectorsPage() {
   return (
     <>
       <Helmet>
-        <title>Domaines d'intervention | Kaparoc Ingénierie</title>
-        <meta name="description" content="Nos ingénieurs interviennent sur tous types d'ouvrages : Bâtiments de grande hauteur, infrastructures routières, ouvrages d'art et industriels." />
+        <title>Domaines d'Intervention | KAPAROC Ingénierie – Bâtiment, Route, Industrie</title>
+        <meta name="description" content="KAPAROC Ingénierie intervient sur tous secteurs : bâtiments de grande hauteur, routes et autoroutes, ouvrages d'art, zones industrielles et portuaires. Expert géotechnique Dakar, Sénégal." />
+        <meta name="keywords" content="géotechnique bâtiment Dakar, étude sol infrastructure routière, fondations ouvrage d'art, géotechnique industriel, port Dakar géotechnique, Sénégal BTP" />
+        <link rel="canonical" href="https://www.kaparoc.com/domaines" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.kaparoc.com/domaines" />
+        <meta property="og:title" content="Domaines d'Intervention – KAPAROC Ingénierie | Géotechnique Multi-Sectorielle" />
+        <meta property="og:description" content="Expertise géotechnique multi-sectorielle : bâtiments, routes, ouvrages d'art, industries. KAPAROC Ingénierie, Dakar Sénégal." />
+        <meta property="og:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Domaines – KAPAROC Ingénierie Géotechnique Dakar" />
+        <meta name="twitter:description" content="KAPAROC intervient sur bâtiments, routes, ouvrages d'art et industries. Expert géotechnique à Dakar, Sénégal." />
+        <meta name="twitter:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
       </Helmet>
       
       <div className="pt-32 pb-16 bg-brand-charcoal text-white text-center">

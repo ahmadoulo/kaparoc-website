@@ -19,8 +19,19 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>À Propos | Kaparoc Ingénierie</title>
-        <meta name="description" content="Découvrez KAPAROC INGENIERIE, notre histoire, notre vision et nos engagements en matière d'études géotechniques et ingénierie au Sénégal et en Afrique de l'Ouest." />
+        <title>À Propos | KAPAROC Ingénierie Géotechnique – Dakar, Sénégal</title>
+        <meta name="description" content="Découvrez KAPAROC Ingénierie : histoire, vision et engagements. Bureau d'études géotechniques fondé à Dakar, spécialisé en reconnaissance des sols, fondations et infrastructure durable en Afrique de l'Ouest." />
+        <meta name="keywords" content="KAPAROC Ingénierie Dakar, bureau géotechnique Sénégal, étude de sol Dakar, fondations infrastructure, ingénierie géotechnique Afrique" />
+        <link rel="canonical" href="https://www.kaparoc.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.kaparoc.com/about" />
+        <meta property="og:title" content="À Propos – KAPAROC Ingénierie | Géotechnique Dakar, Sénégal" />
+        <meta property="og:description" content="Bureau d'études géotechniques à Dakar. Notre expertise en reconnaissance des sols et ingénierie des fondations au service de vos projets BTP en Afrique de l'Ouest." />
+        <meta property="og:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="À Propos – KAPAROC Ingénierie Géotechnique Dakar" />
+        <meta name="twitter:description" content="Découvrez le bureau d'études géotechniques KAPAROC : expertise G1 à G5, fondations, sols — Dakar, Sénégal." />
+        <meta name="twitter:image" content="https://www.kaparoc.com/kaparoc-logo.png" />
       </Helmet>
       
       {/* Page Header */}
