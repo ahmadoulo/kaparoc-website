@@ -21,10 +21,10 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           backgroundImage: `
             linear-gradient(
               to right,
-              rgba(48, 33, 18, 0.92) 0%,
-              rgba(48, 33, 18, 0.78) 32%,
-              rgba(48, 33, 18, 0.50) 58%,
-              rgba(15, 10, 5, 0.28) 100%
+              rgba(35, 22, 8, 0.97) 0%,
+              rgba(35, 22, 8, 0.88) 30%,
+              rgba(35, 22, 8, 0.72) 55%,
+              rgba(20, 12, 4, 0.62) 100%
             ),
             url('/hero-bg.jpg')
           `,
@@ -32,10 +32,11 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           transform: "scale(1.08)"
         }}
       />
-      {/* Unblurred top layer for sharpness on key elements — none needed, blur is subtle */}
+      {/* Extra dark vignette to deepen overall atmosphere */}
+      <div className="absolute inset-0 z-0 bg-black/30" />
 
       {/* Subtle technical dot pattern */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#F84F16_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.07]" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(#F84F16_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.06]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
