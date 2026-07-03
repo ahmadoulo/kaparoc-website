@@ -91,6 +91,91 @@ export default function AboutPage() {
 
       <WhyUs />
 
+      {/* Team Section */}
+      <section className="py-20 bg-brand-light-grey">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-brand-orange text-xs font-bold tracking-widest uppercase mb-3 block">Notre Management</span>
+            <h2 className="font-title text-3xl font-bold text-brand-charcoal">Notre Équipe</h2>
+            <div className="w-12 h-1 bg-brand-orange rounded mx-auto mt-3" />
+            <p className="text-gray-500 font-light mt-4 max-w-xl mx-auto text-sm">
+              Des ingénieurs et techniciens qualifiés, garants de la rigueur et de la fiabilité de chaque mission.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { name: "Peinda SOW CISS", role: "Direction Générale", initials: "PS" },
+              { name: "Abdou Khadre Djily GUEYE", role: "Ingénieur Géotechnicien", initials: "AK" },
+              { name: "Mamadou Waly NIANE", role: "Technicien Supérieur Géotechnique", initials: "MW" },
+            ].map((member, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-md hover:border-brand-orange/30 transition-all">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange to-brand-brown flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
+                  {member.initials}
+                </div>
+                <h3 className="font-title font-bold text-base text-brand-charcoal">{member.name}</h3>
+                <p className="text-xs text-brand-orange font-semibold mt-1 uppercase tracking-wider">{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Valeurs & QHSE */}
+      <section className="py-20 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <div>
+                <span className="text-brand-orange text-xs font-bold tracking-widest uppercase mb-3 block">Nos Valeurs</span>
+                <h2 className="font-title text-2xl font-bold text-brand-charcoal">Excellence, Innovation, Intégrité</h2>
+                <div className="w-12 h-1 bg-brand-orange rounded mt-3" />
+              </div>
+              <div className="space-y-4">
+                {[
+                  { val: "Excellence", desc: "Chaque mission est réalisée avec le plus haut niveau d'exigence technique, conforme aux normes internationales." },
+                  { val: "Innovation", desc: "Nous mobilisons des équipements de dernière génération et des méthodes avancées pour des analyses précises." },
+                  { val: "Intégrité", desc: "Nos recommandations sont indépendantes, objectives et engagent entièrement notre responsabilité professionnelle." },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-brand-orange font-bold text-xs">{String(idx + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-brand-brown">{item.val}</h3>
+                      <p className="text-xs text-gray-500 font-light mt-1 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div>
+                <span className="text-brand-orange text-xs font-bold tracking-widest uppercase mb-3 block">Nos Engagements</span>
+                <h2 className="font-title text-2xl font-bold text-brand-charcoal">Politique QHSE</h2>
+                <div className="w-12 h-1 bg-brand-orange rounded mt-3" />
+              </div>
+              <p className="text-gray-600 font-light leading-relaxed text-sm">
+                KAPAROC Ingénierie s'engage à respecter les plus hautes exigences en matière de Qualité, Hygiène, Sécurité et Environnement dans toutes ses interventions.
+              </p>
+              <div className="bg-brand-light-grey rounded-2xl p-6 border border-gray-100 space-y-3">
+                {[
+                  "Conformité aux normes NF P 94-500 et Eurocode 7",
+                  "Sécurité des opérateurs et protection des chantiers",
+                  "Respect de l'environnement dans les campagnes de terrain",
+                  "Traçabilité complète des échantillons et résultats d'essais",
+                  "Rapports signés et approuvés par des ingénieurs certifiés",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 text-sm text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange flex-shrink-0 mt-1.5" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive CTA */}
       <div className="bg-brand-orange/5 py-16 text-center border-t border-brand-orange/10">
         <div className="max-w-2xl mx-auto px-4">

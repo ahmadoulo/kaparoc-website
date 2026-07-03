@@ -34,19 +34,19 @@ export default function Sectors() {
       id: "genie-civil",
       icon: <Layers className="w-6 h-6 text-brand-orange" />,
       title: "Génie Civil & Tunnels",
-      desc: "Ouvrages souterrains complexes, parkings multi-niveaux d&apos;infrastructure, murs et voiles de soutènements lourds.",
+      desc: "Ouvrages souterrains complexes, parkings multi-niveaux d'infrastructure, murs et voiles de soutènements lourds.",
     },
     {
       id: "routes",
       icon: <Milestone className="w-6 h-6 text-brand-orange" />,
       title: "Routes & Voies Ferrées",
-      desc: "Calcul de portance de plateforme de chaussée routière, ponts ferroviaires, caniveaux d&apos;écoulement et talus d&apos;autoroute.",
+      desc: "Calcul de portance de plateforme de chaussée routière, ponts ferroviaires, caniveaux d'écoulement et talus d'autoroute.",
     },
     {
       id: "hydrauliques",
       icon: <Droplets className="w-6 h-6 text-brand-orange" />,
       title: "Ouvrages Hydrauliques",
-      desc: "Châteaux d&apos;eau publics, collecteurs pluviaux géants, stations d&apos;épuration des eaux (STEP) et bassins de décantation.",
+      desc: "Châteaux d'eau publics, collecteurs pluviaux géants, stations d'épuration des eaux (STEP) et bassins de décantation.",
     },
     {
       id: "portuaires",
@@ -58,7 +58,7 @@ export default function Sectors() {
       id: "complexes",
       icon: <Shield className="w-6 h-6 text-brand-orange" />,
       title: "Infrastructures Complexes",
-      desc: "Piles de ponts majeurs en milieu humide, extensions industrielles en friches et ouvrages d&apos;art à fortes sollicitations dynamiques.",
+      desc: "Piles de ponts majeurs en milieu humide, extensions industrielles en friches et ouvrages d'art à fortes sollicitations dynamiques.",
     }
   ];
 
@@ -69,14 +69,14 @@ export default function Sectors() {
         {/* Title area */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
           <span className="text-xs font-bold text-brand-orange tracking-widest uppercase block">
-            Domaines d&apos;Intervention
+            Domaines d'Intervention
           </span>
           <h2 className="font-title font-extrabold text-3xl sm:text-4xl text-brand-charcoal">
             Une expertise adaptée à chaque ouvrage
           </h2>
           <div className="w-16 h-1 bg-brand-orange mx-auto rounded" />
           <p className="text-sm sm:text-base text-gray-600 font-light leading-relaxed">
-            Grâce à notre polyvalence et nos équipements de modélisation avancés, nous accompagnons la réalisation de projets géotechniques d&apos;envergure variée à travers toute l&apos;Afrique de l&apos;Ouest.
+            Grâce à notre polyvalence et nos équipements de modélisation avancés, nous accompagnons la réalisation de projets géotechniques d'envergure variée à travers toute l'Afrique de l'Ouest.
           </p>
         </div>
 
@@ -107,14 +107,14 @@ export default function Sectors() {
           <div className="flex items-center gap-4">
             <div className="w-1.5 h-12 bg-brand-orange rounded-full flex-shrink-0" />
             <p className="text-xs text-brand-charcoal font-medium leading-relaxed max-w-2xl">
-              Chaque domaine technique est couvert par notre équipe d&apos;ingénieurs seniors capables d&apos;appliquer les normes Eurocode 7, les guides d&apos;exécution du LCPC ainsi que les réglementations locales spécifiques de la sous-région.
+              Chaque domaine technique est couvert par notre équipe d'ingénieurs seniors capables d'appliquer les normes Eurocode 7, les guides d'exécution du LCPC ainsi que les réglementations locales spécifiques de la sous-région.
             </p>
           </div>
           <Link
             to="/contact"
             className="text-xs font-bold text-brand-orange hover:text-brand-brown uppercase tracking-widest border-b border-brand-orange/40 hover:border-brand-brown pb-1 transition-colors flex-shrink-0"
           >
-            Consulter notre bureau d&apos;études →
+            Consulter notre bureau d'études →
           </Link>
         </div>
 

@@ -68,8 +68,8 @@ export default function Services({ onQuoteClick }: ServicesProps) {
     G1: {
       title: "G1 - Étude Géotechnique Préliminaire",
       sub: "Phase d'étude préliminaire de faisabilité",
-      when: "Avant l'acquisition d&apos;un terrain ou lors de l&apos;esquisse d&apos;aménagement.",
-      why: "Permet de déceler d&apos;éventuels risques géotechniques rédhibitoires (cavités, glissements, sols meubles profonds) et de définir une première ébauche de solutions.",
+      when: "Avant l'acquisition d'un terrain ou lors de l'esquisse d'aménagement.",
+      why: "Permet de déceler d'éventuels risques géotechniques rédhibitoires (cavités, glissements, sols meubles profonds) et de définir une première ébauche de solutions.",
       deliverables: [
         "Modèle géologique d'avant-projet",
         "Cartographie des zones de risques géologiques",
@@ -80,7 +80,7 @@ export default function Services({ onQuoteClick }: ServicesProps) {
     G2: {
       title: "G2 - Étude Géotechnique de Conception",
       sub: "Phase d'avant-projet (AVP) et projet (PRO)",
-      when: "Indispensable lors de la conception de l&apos;ouvrage pour le dépôt de permis de construire.",
+      when: "Indispensable lors de la conception de l'ouvrage pour le dépôt de permis de construire.",
       why: "Fournit les hypothèses de calcul géotechniques pour le calcul de structure béton. Valide la conception définitive des semelles, radiers, ou pieux de fondation.",
       deliverables: [
         "Dimensionnement théorique exhaustif des ouvrages géotechniques",
@@ -92,19 +92,19 @@ export default function Services({ onQuoteClick }: ServicesProps) {
     G3: {
       title: "G3 - Étude d'Exécution Géotechnique",
       sub: "Phase de préparation des travaux et chantier",
-      when: "Avant l&apos;ouverture et pendant toute la phase des terrassements et de fondation.",
-      why: "Rédigée pour l&apos;entreprise chargée des travaux. Précise la méthode d&apos;exécution, l&apos;altimétrie d&apos;ancrage exacte et assure l&apos;adéquation des fondations au sol réellement terrassé.",
+      when: "Avant l'ouverture et pendant toute la phase des terrassements et de fondation.",
+      why: "Rédigée pour l'entreprise chargée des travaux. Précise la méthode d'exécution, l'altimétrie d'ancrage exacte et assure l'adéquation des fondations au sol réellement terrassé.",
       deliverables: [
-        "Plan d'exécution détaillé des dalles, blindages et soutènements",
-        "Calculs finaux d'interaction dynamique sous sollicitation réelle d&apos;excavation"
+        "Réalisation des notes de dimensionnement des fondations et soutènements",
+        "Avis (ou contrôle) en interne des documents d'exécutions transmis par l'entreprise avant diffusion au maître d'œuvre ou à la mission G4"
       ],
       mandatory: true
     },
     G4: {
       title: "G4 - Supervision Géotechnique d'Exécution",
       sub: "Phase de contrôle de la mise en œuvre",
-      when: "Parallèlement aux travaux de terrassement et d&apos;ancrage de fondations.",
-      why: "Mission de maîtrise d&apos;œuvre. Permet de vérifier la validité des hypothèses du modèle géotechnique avec les levés réels de fin de terrassement.",
+      when: "Parallèlement aux travaux de terrassement et d'ancrage de fondations.",
+      why: "Mission de maîtrise d'œuvre. Permet de vérifier la validité des hypothèses du modèle géotechnique avec les levés réels de fin de terrassement.",
       deliverables: [
         "Avis techniques sur les notes de calcul de l'entreprise de construction",
         "Validation sur site de la contrainte sol sous la base des fouilles"
@@ -115,7 +115,7 @@ export default function Services({ onQuoteClick }: ServicesProps) {
       title: "G5 - Diagnostic Géotechnique",
       sub: "En cas de fissuration ou pathologie structurelle majeure",
       when: "Sur un ouvrage existant présentant des désordres (fissures, tassement différentiel).",
-      why: "Évalue l&apos;origine géotechnique d&apos;une pathologie et recommande des travaux de confortement (reprise en sous-œuvre, injections de résine ou micro-pieux).",
+      why: "Évalue l'origine géotechnique d'une pathologie et recommande des travaux de confortement (reprise en sous-œuvre, injections de résine ou micro-pieux).",
       deliverables: [
         "Diagnostic de pathologie des fondations d'ouvrages existants",
         "Rapport de solutions palliatives hautement sécuritaires"
@@ -134,11 +134,11 @@ export default function Services({ onQuoteClick }: ServicesProps) {
             Nos Métiers
           </span>
           <h2 className="font-title font-extrabold text-3xl sm:text-4xl text-brand-charcoal">
-            Solutions d&apos;Ingénierie Géotechnique
+            Solutions d'Ingénierie Géotechnique
           </h2>
           <div className="w-16 h-1 bg-brand-orange mx-auto rounded" />
           <p className="text-sm sm:text-base text-gray-600 font-light leading-relaxed">
-            Un panel complet d&apos;expertises techniques pour guider la robustesse de vos structures, de la première esquisse géologique jusqu&apos;à la réception finale des fondations.
+            Un panel complet d'expertises techniques pour guider la robustesse de vos structures, de la première esquisse géologique jusqu'à la réception finale des fondations.
           </p>
         </div>
 
@@ -162,7 +162,7 @@ export default function Services({ onQuoteClick }: ServicesProps) {
               </div>
               
               <div className="pt-6 border-t border-gray-200/50 mt-6 flex items-center text-xs font-bold text-brand-orange gap-1">
-                <span>Détails de l&apos;expertise</span>
+                <span>Détails de l'expertise</span>
                 <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
@@ -185,19 +185,19 @@ export default function Services({ onQuoteClick }: ServicesProps) {
                 La Norme NF P 94-500
               </span>
               <h3 className="font-title font-extrabold text-xl sm:text-2xl leading-snug">
-                Maîtriser les étapes officielles d&apos;études de sols
+                Maîtriser les étapes officielles d'études de sols
               </h3>
               <p className="text-xs sm:text-sm text-brand-beige/85 font-light leading-relaxed">
-                La réglementation géotechnique définit un enchaînement précis de missions de sol (G1, G2, G3, G4, G5). Chacune s&apos;intègre à une étape précise du cycle de vie de votre projet de construction pour en éradiquer les risques.
+                La réglementation géotechnique définit un enchaînement précis de missions de sol (G1, G2, G3, G4, G5). Chacune s'intègre à une étape précise du cycle de vie de votre projet de construction pour en éradiquer les risques.
               </p>
               <div className="flex flex-col gap-2 pt-2">
                 <p className="text-xs text-brand-beige/70 font-light flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-                  <strong>G2</strong> est techniquement indispensable pour l&apos;assurance décennale.
+                  <strong>G2</strong> est techniquement indispensable pour l'assurance décennale.
                 </p>
                 <p className="text-xs text-brand-beige/70 font-light flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-                  <strong>G5</strong> résout les litiges de fissures et d&apos;affaissement.
+                  <strong>G5</strong> résout les litiges de fissures et d'affaissement.
                 </p>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function Services({ onQuoteClick }: ServicesProps) {
                     <strong className="text-white">Quand intervenir :</strong> {missionsDefinition[activeMissionsTab].when}
                   </p>
                   <p>
-                    <strong className="text-white">But de l&apos;étude :</strong> {missionsDefinition[activeMissionsTab].why}
+                    <strong className="text-white">But de l'étude :</strong> {missionsDefinition[activeMissionsTab].why}
                   </p>
 
                   <div className="pt-2">

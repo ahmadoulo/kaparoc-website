@@ -14,16 +14,25 @@ interface HeroProps {
 export default function Hero({ onQuoteClick }: HeroProps) {
   return (
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-brand-brown">
-      {/* Background with elegant overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform scale-105"
+      {/* Background photo — African engineers on geotechnical site */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(75, 55, 37, 0.95) 20%, rgba(75, 55, 37, 0.6) 60%, rgba(8, 8, 8, 0.3)), url('https://images.unsplash.com/photo-1545652985-05517173db7e?q=80&w=2070&auto=format&fit=crop')`
+          backgroundImage: `
+            linear-gradient(
+              to right,
+              rgba(58, 42, 26, 0.93) 0%,
+              rgba(58, 42, 26, 0.82) 35%,
+              rgba(58, 42, 26, 0.55) 60%,
+              rgba(20, 14, 8, 0.30) 100%
+            ),
+            url('/hero-bg.jpg')
+          `
         }}
       />
 
-      {/* Decorative technical line representing coordinates/stratigraphy */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#F84F16_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
+      {/* Subtle technical dot pattern */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(#F84F16_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.07]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -47,11 +56,11 @@ export default function Hero({ onQuoteClick }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="font-title font-bold text-4xl sm:text-5xl lg:text-7xl text-white leading-tight"
+                className="font-title font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight"
               >
-                Construisons sur<br />
+                L'ingénierie des sols,<br />
                 <span className="block text-brand-orange mt-2 font-bold">
-                  du solide.
+                  en toute confiance !
                 </span>
               </motion.h1>
 
@@ -61,7 +70,7 @@ export default function Hero({ onQuoteClick }: HeroProps) {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="max-w-2xl text-base sm:text-lg text-brand-beige/95 font-light leading-relaxed"
               >
-                Expertise géotechnique de précision pour les infrastructures majeures, fondations profondes et ouvrages d'art en Afrique de l'Ouest. Nous maîtrisons chaque couche géologique.
+                Il est essentiel de réaliser une reconnaissance géotechnique avant tout projet de construction. Cette étape permet d'anticiper les contraintes du sol et de sécuriser les choix techniques dès la phase de conception.
               </motion.p>
             </div>
 
@@ -78,7 +87,7 @@ export default function Hero({ onQuoteClick }: HeroProps) {
               </div>
               <div className="flex items-center gap-1.5">
                 <Microscope className="w-4 h-4 text-brand-orange" />
-                <span>Laboratoire d&apos;Analyse Géotechnique Propre</span>
+                <span>Laboratoire d'Analyse Géotechnique Propre</span>
               </div>
             </motion.div>
 
@@ -89,17 +98,17 @@ export default function Hero({ onQuoteClick }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 pt-2"
             >
               <Link
-                to="/services"
+                to="/missions"
                 className="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange/95 text-white text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                Découvrir nos services
+                Voir nos missions
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={onQuoteClick}
                 className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/40 text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-lg transition-all"
               >
-                Demander un devis / étude
+                Demander une étude / Un devis
               </button>
             </motion.div>
           </div>
@@ -118,7 +127,7 @@ export default function Hero({ onQuoteClick }: HeroProps) {
               </h3>
               <div className="space-y-4 text-xs font-light text-brand-beige">
                 <p>
-                  Partenaire privilégié des maîtres d&apos;ouvrage publics et privés pour la sécurisation de grands projets d&apos;infrastructures (Dakar, Diamniadio, Thiès, etc.).
+                  Partenaire privilégié des maîtres d'ouvrage publics et privés pour la sécurisation de grands projets d'infrastructures (Dakar, Diamniadio, Thiès, etc.).
                 </p>
                 <div className="rounded-lg bg-black/25 p-3 space-y-2 border border-white/5">
                   <div className="flex justify-between">
@@ -148,18 +157,18 @@ export default function Hero({ onQuoteClick }: HeroProps) {
         >
           <div className="space-y-1">
             <span className="block font-title font-extrabold text-3xl sm:text-4xl text-brand-orange">
-              15+ Ans
+              +80
             </span>
             <span className="block text-xs font-bold text-white/70 uppercase tracking-widest">
-              D&apos;expertise métier
+              Projets réalisés
             </span>
           </div>
           <div className="space-y-1">
             <span className="block font-title font-extrabold text-3xl sm:text-4xl text-brand-orange">
-              500+
+              +10 Ans
             </span>
             <span className="block text-xs font-bold text-white/70 uppercase tracking-widest">
-              Études de sol réalisées
+              D'expérience métier
             </span>
           </div>
           <div className="space-y-1">
@@ -172,10 +181,10 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           </div>
           <div className="space-y-1">
             <span className="block font-title font-extrabold text-3xl sm:text-4xl text-brand-orange">
-              100%
+              +40
             </span>
             <span className="block text-xs font-bold text-white/70 uppercase tracking-widest">
-              Conformité et portance
+              Clients satisfaits
             </span>
           </div>
         </motion.div>

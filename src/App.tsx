@@ -20,6 +20,7 @@ const SectorsPage = lazy(() => import("./pages/SectorsPage"));
 const TeamPage = lazy(() => import("./pages/TeamPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const MissionsPage = lazy(() => import("./pages/MissionsPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 
 // ScrollToTop strictly for resetting scroll position on route change
 function ScrollToTop() {
@@ -76,6 +77,9 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="services" element={<ServicesPage />} />
+              <Route path="missions" element={<MissionsPage />} />
+              <Route path="projets" element={<ProjectsPage />} />
+              {/* Legacy routes for compatibility */}
               <Route path="geotechnique-g1-g5" element={<MissionsPage />} />
               <Route path="domaines" element={<SectorsPage />} />
               <Route path="equipe" element={<TeamPage />} />

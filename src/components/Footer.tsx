@@ -10,17 +10,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const linksCompany = [
-    { name: "Qui sommes-nous ?", href: "/about" },
-    { name: "Nos Services", href: "/services" },
-    { name: "Secteurs d'activité", href: "/domaines" },
-    { name: "Notre Équipe", href: "/equipe" },
+    { name: "Accueil", href: "/" },
+    { name: "Nos Missions", href: "/missions" },
+    { name: "Nos Références", href: "/projets" },
+    { name: "À Propos", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const linksNormative = [
-    { name: "Norme G1 à G5 (NF P 94-500)", href: "/geotechnique-g1-g5" },
-    { name: "Sécurité & Portance", href: "/about" },
-    { name: "Bureau de Contrôle Agréé", href: "/about" },
-    { name: "Assurances Décennales SN", href: "/about" },
+    { name: "Ingénierie Géotechnique (G1-G5)", href: "/missions#ingenierie" },
+    { name: "Laboratoire", href: "/missions#laboratoire" },
+    { name: "Essais In-Situ", href: "/missions#in-situ" },
+    { name: "Auscultation & Instrumentation", href: "/missions#auscultation" },
   ];
 
   return (
@@ -40,7 +41,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-xs text-brand-beige/70 leading-relaxed font-light max-w-sm">
-              Bureau d&apos;études géotechniques de référence spécialisé dans l&apos;analyse des sols, le dimensionnement des fondations et les infrastructures durables en Afrique de l&apos;Ouest. Basé à Dakar, Sénégal.
+              Bureau d'études géotechniques spécialisé en ingénierie des sols, contrôle des matériaux et supervision des travaux. Basé à Dakar, nous accompagnons les projets d'infrastructures et de bâtiments, de la reconnaissance des sols jusqu'à la réalisation.
             </p>
             <div className="flex items-center gap-1.5 text-[11px] text-brand-orange font-semibold">
               <ShieldCheck className="w-4 h-4" />

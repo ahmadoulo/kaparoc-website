@@ -19,12 +19,12 @@ export default function ServicesPage() {
     {
       title: "Investigations in-situ",
       icon: <Navigation className="w-6 h-6 text-brand-orange" />,
-      features: ["Sondages pressiométriques", "Pénétromètres dynamiques lourds", "Forages carottés", "Essais de perméabilité"]
+      features: ["Sondages pressiométriques (Ménard)", "Pénétromètres dynamiques lourds (PDL)", "Forages carottés géotechniques", "Essais de perméabilité in-situ"]
     },
     {
       title: "Analyses de laboratoire",
       icon: <Microscope className="w-6 h-6 text-brand-orange" />,
-      features: ["Identification des sols", "Essais de cisaillement", "Essais œdométriques", "Limites d'Atterberg"]
+      features: ["Cisaillement direct & essais triaxiaux", "Essais œdométriques (tassement)", "Granulométrie & limites d'Atterberg", "Essais Proctor & gonflement libre"]
     }
   ];
 

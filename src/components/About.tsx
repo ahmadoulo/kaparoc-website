@@ -13,7 +13,7 @@ export default function About() {
   const keyDifferentiators = [
     "Expertise reconnue dans les calculs de tassement complexes et stabilité de glissements de talus.",
     "Modélisations géotechniques 2D/3D avancées avec logiciels d'interaction sol-structure.",
-    "Suivi rigoureux de terrain pour la validation et l&apos;approbation par les plus grands bureaux de contrôle (SOCOTEC, Bureau Veritas, etc.).",
+    "Suivi rigoureux de terrain pour la validation et l'approbation par les plus grands bureaux de contrôle (SOCOTEC, Bureau Veritas, etc.).",
     "Solutions géotechniques de restructuration ou renforcement sur-mesure pour les sous-sols contraignants."
   ];
 
@@ -62,9 +62,11 @@ export default function About() {
             Façonner la stabilité de vos infrastructures dès la racine
           </h2>
           <div className="w-16 h-1 bg-brand-orange mx-auto rounded" />
-          <p className="text-sm sm:text-base text-gray-600 font-light leading-relaxed">
-            Bureau d&apos;études géotechniques de référence, KAPAROC INGENIERIE combine rigueur scientifique de haut niveau, parfaite connaissance du sous-sol d&apos;Afrique de l&apos;Ouest et modélisation logicielle de pointe pour garantir la pérennité de tous vos édifices.
-          </p>
+          <div className="space-y-3 text-sm sm:text-base text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
+            <p>KAPAROC Ingénierie est un bureau d'études spécialisé en géotechnique, contrôle des matériaux et supervision des travaux.</p>
+            <p>Nous accompagnons les projets d'infrastructures et de bâtiments, de la reconnaissance des sols jusqu'à la réalisation.</p>
+            <p>Notre expertise garantit des solutions fiables, optimisées et conformes aux exigences techniques et réglementaires.</p>
+          </div>
         </div>
 
         {/* Content Grid */}
@@ -74,13 +76,13 @@ export default function About() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
               <h3 className="font-title font-extrabold text-2xl text-brand-brown leading-tight">
-                Une ingénierie scientifique de précision, orientée durabilité
+                L'ingénierie des sols, à chaque étape de votre projet
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
-                Chaque désordre de sol non anticipé peut compromettre dramatiquement la structure d&apos;un bâtiment et fragiliser des investissements substantiels. Chez <strong>KAPAROC INGENIERIE</strong>, nous neutralisons l&apos;incertitude géologique en mettant à votre disposition des analyses scientifiques fidèles, conformes aux standards géotechniques internationaux.
+                KAPAROC Ingénierie vous accompagne à chaque étape de votre projet — de l'étude à l'exécution — afin de mieux comprendre le comportement des sols, quelle que soit leur nature, et la dynamique des nappes d'eaux souterraines.
               </p>
               <p className="text-sm text-gray-600 leading-relaxed font-light">
-                Qu&apos;il s&apos;agisse de l&apos;étude de sols pour des habitations individuelles, d&apos;infrastructures routières complexes ou de grands ensembles industriels, nous déterminons la profondeur d&apos;assise optimale et les dispositifs d&apos;amélioration de sol avec des calculs éprouvés de cohésion de sol, d&apos;angle de frottement et de contraintes de tassement admises.
+                Cette approche permet de fiabiliser les solutions techniques, d'optimiser les coûts et de limiter les risques. Qu'il s'agisse de l'étude de sols pour des habitations individuelles, d'infrastructures routières complexes ou de grands ensembles industriels, nous déterminons la profondeur d'assise optimale des fondations et les dispositifs d'amélioration de sol avec des calculs éprouvés pour déterminer la portance des sols et estimer les tassements dus aux charges apportées.
               </p>
             </div>
 
@@ -97,7 +99,7 @@ export default function About() {
                 <Compass className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-brand-brown">Équipements Modernes</h4>
-                  <p className="text-xs text-gray-500 mt-1">Sondages de pénétration dynamique, pressiométriques et laboratoire d&apos;analyses.</p>
+                  <p className="text-xs text-gray-500 mt-1">Sondages de pénétration dynamique, pressiométriques et laboratoire d'analyses.</p>
                 </div>
               </div>
             </div>
@@ -123,17 +125,17 @@ export default function About() {
             <div className="flex items-center justify-between border-b border-gray-100 pb-4">
               <div>
                 <h3 className="font-title font-bold text-base text-brand-charcoal">
-                  Stratigraphie Modèle du Sol (Dakar-Sénégal)
+                  Stratigraphie Modèle du Sol (Diamniadio-Sénégal)
                 </h3>
                 <span className="text-[10px] text-gray-500 uppercase tracking-widest block mt-0.5">
-                  Cliquez sur un profil pour l&apos;analyser
+                  Cliquez sur un profil pour l'analyser
                 </span>
               </div>
               <Award className="w-5 h-5 text-brand-orange" />
             </div>
 
             <p className="text-xs text-gray-500 leading-relaxed font-light">
-              Un profil structural schématique représentant de manière scientifique les contreforts géologiques courants rencontrés lors de nos chantiers en presqu&apos;île.
+              Un profil structural schématique représentant de manière scientifique les contreforts géologiques courants rencontrés lors de nos chantiers en presqu'île.
             </p>
 
             {/* Stack representing ground layers */}

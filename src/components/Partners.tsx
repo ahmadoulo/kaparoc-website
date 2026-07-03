@@ -4,7 +4,6 @@
  */
 
 import { useState } from "react";
-import { motion } from "motion/react";
 
 const partners = [
   { name: "CHEC", sub: "China Harbour Engineering", file: "ChinaHarborEngineeringLTD_Logo.jpeg" },
@@ -21,62 +20,86 @@ const partners = [
   { name: "La Brioche Dorée", sub: "Agroalimentaire", file: "brioche-doree-logo.png" },
 ];
 
+// Duplicate list for seamless infinite scroll
+const allPartners = [...partners, ...partners];
+
 export default function Partners() {
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
+  const [isPaused, setIsPaused] = useState(false);
 
-  const handleImgError = (name: string) => {
-    setImgErrors((prev) => ({ ...prev, [name]: true }));
+  const handleImgError = (key: string) => {
+    setImgErrors((prev) => ({ ...prev, [key]: true }));
   };
 
   return (
-    <section className="py-20 bg-white border-t border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-brand-orange text-xs font-bold tracking-widest uppercase mb-4 block">Confiance & Expertise</span>
-          <h2 className="font-title text-3xl font-bold text-brand-charcoal mb-4">Nos Partenaires</h2>
-          <p className="text-gray-600 font-light">
-            Découvrez les institutions, entreprises et grands groupes qui s'appuient sur l'expertise géotechnique de KAPAROC INGÉNIERIE pour la réussite de leurs projets.
-          </p>
-        </div>
+    <section className="py-16 bg-white border-t border-gray-100 overflow-hidden">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+        <span className="text-brand-orange text-xs font-bold tracking-widest uppercase mb-3 block">Confiance & Expertise</span>
+        <h2 className="font-title text-3xl font-bold text-brand-charcoal mb-3">Nos Partenaires</h2>
+        <div className="w-12 h-1 bg-brand-orange rounded mx-auto mb-4" />
+        <p className="text-gray-500 font-light text-sm max-w-xl mx-auto">
+          Des institutions, entreprises et grands groupes qui s'appuient sur l'expertise géotechnique de KAPAROC INGÉNIERIE.
+        </p>
+      </div>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {partners.map((partner, index) => {
-            const hasError = imgErrors[partner.name];
+      {/* Infinite scroll track */}
+      <div
+        className="relative w-full"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Left & right fade overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+        {/* Scrolling track */}
+        <div
+          className="flex gap-6 w-max"
+          style={{
+            animation: `partners-scroll 32s linear infinite`,
+            animationPlayState: isPaused ? "paused" : "running",
+          }}
+        >
+          {allPartners.map((partner, index) => {
+            const key = `${partner.name}-${index}`;
+            const hasError = imgErrors[key];
 
             return (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group flex flex-col items-center justify-center p-6 h-32 bg-gray-50 hover:bg-white rounded-2xl border border-transparent hover:border-brand-beige/50 shadow-none hover:shadow-lg transition-all duration-300 cursor-default"
+              <div
+                key={key}
+                className="flex flex-col items-center justify-center px-8 py-5 bg-gray-50 hover:bg-white rounded-2xl border border-transparent hover:border-brand-beige/50 hover:shadow-md transition-all duration-300 cursor-default flex-shrink-0 min-w-[160px] h-24 group"
               >
                 {!hasError ? (
                   <img
                     src={`/partenaire/${partner.file}`}
                     alt={`Logo ${partner.name}`}
-                    className="max-w-[140px] max-h-[70px] w-auto h-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                    onError={() => handleImgError(partner.name)}
+                    className="max-w-[120px] max-h-[52px] w-auto h-auto object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-400"
+                    onError={() => handleImgError(key)}
                   />
                 ) : (
-                  <>
-                    <h3 className="font-title font-extrabold text-lg sm:text-xl text-brand-charcoal/80 group-hover:text-brand-orange transition-colors text-center leading-tight">
+                  <div className="text-center">
+                    <h3 className="font-title font-extrabold text-base text-brand-charcoal/70 group-hover:text-brand-orange transition-colors leading-tight">
                       {partner.name}
                     </h3>
-                    {partner.sub && (
-                      <p className="text-[9px] sm:text-[10px] text-gray-400 group-hover:text-gray-500 uppercase tracking-widest mt-2 text-center font-semibold transition-colors">
-                        {partner.sub}
-                      </p>
-                    )}
-                  </>
+                    <p className="text-[9px] text-gray-400 uppercase tracking-widest mt-1 font-semibold">
+                      {partner.sub}
+                    </p>
+                  </div>
                 )}
-              </motion.div>
+              </div>
             );
           })}
         </div>
       </div>
+
+      {/* CSS animation keyframes injected inline */}
+      <style>{`
+        @keyframes partners-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }

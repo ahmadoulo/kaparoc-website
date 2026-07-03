@@ -34,22 +34,22 @@ export default function WhyUs() {
     {
       step: "01",
       title: "Analyse documentaire & géophysique",
-      desc: "Reconnaissance précoce de la parcelle, étude géologique historique de la région (Dakar, Thiès, Côte) et détection de nappes.",
+      desc: "Reconnaissance précoce de la parcelle, étude géologique historique et documentaire de la région (Dakar, Thiès, Côte) et détection de nappes.",
     },
     {
       step: "02",
       title: "Investigations in-situ & Laboratoire",
-      desc: "Forages de pénétration lourde, essais pressiométriques sur le terrain et cisaillement ou gonflement des échantillons prélevés en laboratoire.",
+      desc: "Forages de pénétration lourde, essais pressionométriques sur le terrain et essais de cisaillement, gonflement des échantillons prélevés en laboratoire.",
     },
     {
       step: "03",
       title: "Modélisation numérique",
-      desc: "Saisie des données de cisaillement, modélisation par éléments finis pour calculer les tassements et de l'interaction sol-structure.",
+      desc: "Traitement et saisie des paramètres géotechniques, modélisation par éléments finis pour calculer les tassements et l'interaction sol-structure.",
     },
     {
       step: "04",
       title: "Rapport d'ingénierie & Recommandations",
-      desc: "Remise d'un document clair d&apos;ingénierie avec plans de principe de fondations et validation du coefficient de sécurité d&apos;assise."
+      desc: "Remise d'un document clair d'ingénierie avec plans de principe de fondations et validation du coefficient de sécurité d'assise."
     }
   ];
 
@@ -67,7 +67,7 @@ export default function WhyUs() {
           </h2>
           <div className="w-16 h-1 bg-brand-orange mx-auto rounded" />
           <p className="text-sm text-gray-600 font-light leading-relaxed">
-            Un haut niveau d&apos;exigence technique combiné à l&apos;approche pragmatique requise pour sécuriser et accélérer vos chantiers du bâtiment et des travaux publics.
+            Un haut niveau d'exigence technique combiné à l'approche pragmatique requise pour sécuriser et accélérer vos chantiers du bâtiment et des travaux publics.
           </p>
         </div>
 
@@ -77,10 +77,10 @@ export default function WhyUs() {
           {/* Why list Left */}
           <div className="lg:col-span-6 space-y-8">
             <h3 className="font-title font-extrabold text-2xl text-brand-brown">
-              Une culture de l&apos;excellence et de la conformité réglementaire
+              Une culture de l'excellence et de la conformité réglementaire
             </h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              KAPAROC est un cabinet d&apos;ingénierie certifié guidé par la conviction que le sol est le composant le plus important d&apos;un bâtiment. Un bon rapport géotechnique n&apos;est pas juste une formalité pour valider un dossier de contrôle : c&apos;est la garantie matérielle de votre ouvrage dans le temps.
+              KAPAROC est un cabinet d'ingénierie certifié guidé par la conviction que le sol est le composant le plus important d'un bâtiment. Un bon rapport géotechnique n'est pas juste une formalité pour valider un dossier de contrôle : c'est la garantie matérielle de votre ouvrage dans le temps.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -107,7 +107,7 @@ export default function WhyUs() {
                 Notre engagement :
               </span>
               <p className="text-xs text-brand-charcoal font-medium leading-relaxed">
-                « Accompagner les constructeurs d&apos;aujourd&apos;hui à ériger les édifices de demain sans l&apos;ombre d&apos;un doute géotechnique. Chaque ligne de calcul est signée et engage notre bureau d&apos;études de Dakar. »
+                « Accompagner les constructeurs d'aujourd'hui à ériger les édifices de demain sans l'ombre d'un doute géotechnique. Chaque ligne de calcul est signée et engage notre bureau d'études de Dakar. »
               </p>
             </div>
           </div>
