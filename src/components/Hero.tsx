@@ -14,22 +14,25 @@ interface HeroProps {
 export default function Hero({ onQuoteClick }: HeroProps) {
   return (
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-brand-brown">
-      {/* Background photo — African engineers on geotechnical site */}
+      {/* Background photo — aerial drone view of Dakar construction site */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `
             linear-gradient(
               to right,
-              rgba(58, 42, 26, 0.93) 0%,
-              rgba(58, 42, 26, 0.82) 35%,
-              rgba(58, 42, 26, 0.55) 60%,
-              rgba(20, 14, 8, 0.30) 100%
+              rgba(48, 33, 18, 0.92) 0%,
+              rgba(48, 33, 18, 0.78) 32%,
+              rgba(48, 33, 18, 0.50) 58%,
+              rgba(15, 10, 5, 0.28) 100%
             ),
             url('/hero-bg.jpg')
-          `
+          `,
+          filter: "blur(1.5px)",
+          transform: "scale(1.08)"
         }}
       />
+      {/* Unblurred top layer for sharpness on key elements — none needed, blur is subtle */}
 
       {/* Subtle technical dot pattern */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(#F84F16_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.07]" />
