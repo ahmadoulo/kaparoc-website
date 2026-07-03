@@ -13,7 +13,7 @@ interface HeroProps {
 
 export default function Hero({ onQuoteClick }: HeroProps) {
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-brand-brown">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-brown">
       {/* Background photo — aerial drone view of Dakar construction site */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
