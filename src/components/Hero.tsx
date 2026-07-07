@@ -51,7 +51,7 @@ export default function Hero({ onQuoteClick }: HeroProps) {
             >
               <span className="w-2.5 h-2.5 rounded-full bg-brand-orange animate-pulse" />
               <span className="text-[11px] font-bold text-white tracking-widest uppercase">
-                Bureau d'études géotechniques agréé NF P 94-500
+                Bureau d'études géotechniques agréé par LNR BTP
               </span>
             </motion.div>
 
@@ -131,16 +131,12 @@ export default function Hero({ onQuoteClick }: HeroProps) {
               </h3>
               <div className="space-y-4 text-xs font-light text-brand-beige">
                 <p>
-                  Partenaire privilégié des maîtres d'ouvrage publics et privés pour la sécurisation de grands projets d'infrastructures (Dakar, Diamniadio, Thiès, etc.).
+                  Partenaire privilégié de grands projets d'infrastructures au Sénégal et dans la sous-région.
                 </p>
                 <div className="rounded-lg bg-black/25 p-3 space-y-2 border border-white/5">
                   <div className="flex justify-between">
-                    <span className="font-medium text-white">Bureau de Contrôle</span>
+                    <span className="font-medium text-white">Bureau Géotechnique</span>
                     <span className="text-brand-orange font-bold">Approuvé</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium text-white">Domaine de Garantie</span>
-                    <span className="text-brand-orange font-bold">Décennale sécurisée</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="font-medium text-white">Précision Labo</span>

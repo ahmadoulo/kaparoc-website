@@ -13,7 +13,7 @@ export default function About() {
   const keyDifferentiators = [
     "Expertise reconnue dans les calculs de tassement complexes et stabilité de glissements de talus.",
     "Modélisations géotechniques 2D/3D avancées avec logiciels d'interaction sol-structure.",
-    "Suivi rigoureux de terrain pour la validation et l'approbation par les plus grands bureaux de contrôle (SOCOTEC, Bureau Veritas, etc.).",
+    "Suivi rigoureux de terrain pour la validation et l'approbation par les plus grands bureaux de contrôle.",
     "Solutions géotechniques de restructuration ou renforcement sur-mesure pour les sous-sols contraignants."
   ];
 
@@ -125,7 +125,7 @@ export default function About() {
             <div className="flex items-center justify-between border-b border-gray-100 pb-4">
               <div>
                 <h3 className="font-title font-bold text-base text-brand-charcoal">
-                  Stratigraphie Modèle du Sol (Diamniadio-Sénégal)
+                  Stratigraphie Modèle du Sol (Diamniadio / Dakar)
                 </h3>
                 <span className="text-[10px] text-gray-500 uppercase tracking-widest block mt-0.5">
                   Cliquez sur un profil pour l'analyser

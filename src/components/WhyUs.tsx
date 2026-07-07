@@ -21,7 +21,7 @@ export default function WhyUs() {
     {
       icon: <Award className="w-5 h-5 text-brand-orange" />,
       title: "Conformité de classe A",
-      desc: "Rapports d'études conçus pour être systématiquement acceptés par SOCOTEC, Bureau Veritas et toutes les assurances décennales locales.",
+      desc: "Rapports d'études conçus pour être systématiquement acceptés par les grands bureaux géotechniques et toutes les assurances décennales locales.",
     },
     {
       icon: <Scale className="w-5 h-5 text-brand-orange" />,
