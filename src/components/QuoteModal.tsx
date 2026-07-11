@@ -5,7 +5,7 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Send, CheckCircle2, FileText, Info } from "lucide-react";
+import { X, Send, CheckCircle2, FileText, Info, XCircle } from "lucide-react";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -24,6 +24,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const projectTypes = [
     "G1 - Faisabilité Préliminaire",
@@ -42,29 +43,57 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    // Simulate API transport
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        projectType: "G2 - Conception Fondations (Permis de Construire)",
-        location: "",
-        description: "",
+    // Build FormData for Web3Forms
+    const web3FormData = new FormData();
+    web3FormData.append("access_key", "caaf2841-a87d-467c-bde1-a0f8c60b0fa1");
+    web3FormData.append("subject", "[KAPAROC] Demande de devis – Popup Header");
+    web3FormData.append("name", formData.name);
+    web3FormData.append("email", formData.email);
+    web3FormData.append("phone", formData.phone);
+    web3FormData.append("project_type", formData.projectType);
+    web3FormData.append("location", formData.location);
+    web3FormData.append("message", formData.description);
+    // Honeypot anti-spam
+    web3FormData.append("botcheck", "");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3FormData,
       });
 
-      // Close modal on delay
-      setTimeout(() => {
-        setSubmitSuccess(false);
-        onClose();
-      }, 4000);
-    }, 1200);
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "G2 - Conception Fondations (Permis de Construire)",
+          location: "",
+          description: "",
+        });
+
+        // Close modal after delay
+        setTimeout(() => {
+          setSubmitSuccess(false);
+          onClose();
+        }, 4000);
+      } else {
+        setIsSubmitting(false);
+        setSubmitError(data.message || "Une erreur s'est produite. Veuillez réessayer.");
+      }
+    } catch {
+      setIsSubmitting(false);
+      setSubmitError("Impossible de contacter le serveur. Vérifiez votre connexion internet.");
+    }
   };
 
   if (!isOpen) return null;
@@ -233,6 +262,31 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                     Un géotechnicien confirmera avec vous le nombre minimal de points de sondages (pénétromètres et pressiomètres) requis pour valider votre ouvrage auprès des commissions de contrôle correspondantes.
                   </span>
                 </div>
+
+                {/* Error message */}
+                <AnimatePresence>
+                  {submitError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-start gap-2 text-red-900 text-[11px]"
+                    >
+                      <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <p className="font-bold">Échec de l'envoi</p>
+                        <p className="text-red-800/80 font-light">{submitError}</p>
+                        <button
+                          type="button"
+                          onClick={() => setSubmitError("")}
+                          className="text-red-700 font-bold underline underline-offset-2 hover:text-red-900 transition-colors"
+                        >
+                          Réessayer
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 <div className="pt-2 flex justify-end gap-3">
                   <button
